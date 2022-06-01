@@ -1,0 +1,25 @@
+<!-- add product -->
+<div>
+    <form [formGroup]="userform" (ngSubmit)="onSubmit()">
+  
+      <label for="productid">productid: </label>
+      <input id="productid" type="text" formControlName="productid">
+    
+      <label for="productname">productname: </label>
+      <input id="productname" type="text" formControlName="productname">
+  
+      <label for="price">price: </label>
+      <input id="price" type="text" formControlName="price">
+  
+      <button type="submit">Create product</button>
+    
+    </form>
+  
+  </div>
+
+  <div style="float: right;">
+    <input #productvalue>
+    <button (click)="deleteproduct(productvalue.value)">Delete product by id</button>
+    </div>
+
+    

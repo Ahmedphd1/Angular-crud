@@ -1,0 +1,50 @@
+
+<!-- add seller -->
+<div>
+    <form [formGroup]="sellerform" (ngSubmit)="onSubmit()">
+  
+      <label for="sellerid">sellerid: </label>
+      <input id="sellerid" type="text" formControlName="sellerid">
+    
+      <label for="name">name: </label>
+      <input id="name" type="text" formControlName="name">
+  
+      <label for="productid">productid: </label>
+      <input id="productid" type="text" formControlName="productid">
+  
+      <button type="submit">Create seller</button>
+    
+    </form>
+  
+  </div>
+
+  <!-- view seller -->
+  <div class="container">
+    <button (click)="viewseller()">View created seller</button>
+    <div class="list" *ngFor="let item of list">
+      <div class="list-item">
+        <span class="list-row">
+          <label for="">sellerid:</label>{{item.sellerid}}
+          <label for="">name: </label>{{item.name}}
+          <label for="">productid: </label>{{item.productid}}
+          <button (click)="deleteseller(item.sellerid)">Delete seller</button>
+        </span>
+      </div>
+    </div>
+
+      <!-- get user by id -->
+  <div style="float: right;">
+    <input #sellervalue>
+    <button (click)="getuserbyid(getsellerbyid.value)">view seller</button>
+    <div class="list" *ngFor="let selleritem of sellerbyid">
+      <div class="list-item">
+        <span class="list-row">
+          <label for="">userID:</label>{{selleritem.sellerid}}
+          <label for="">username: </label>{{selleritem.name}}
+          <label for="">password: </label>{{selleritem.productid}}
+          <button (click)="deleteseller(selleritem.sellerid)">Delete seller</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
